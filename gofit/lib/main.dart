@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gofit/game_page.dart';
 import 'package:gofit/homescreen.dart';
+import 'package:gofit/instructions.dart';
 import 'package:gofit/onboarding_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: initScreen == 0 || initScreen == null ? "first" : "/",
       routes: {
-        '/': (context) => Onboarding(),
+        '/': (context) => HomeScreen(),
         "first": (context) => Onboarding(),
       },
     );

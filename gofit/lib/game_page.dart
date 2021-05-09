@@ -12,7 +12,7 @@ class GamePage extends StatefulWidget {
 
 class _GamePageState extends State<GamePage> {
   final databaseReference = FirebaseDatabase.instance.reference();
-  double x, y, z;
+  double x = 0.0, y = 0.0, z = 0.0;
   double last = 0.0,
       second = 0.0,
       third = 0.0,
@@ -34,9 +34,7 @@ class _GamePageState extends State<GamePage> {
   }
 
   void realtimeUpdateAction(int action) {
-    databaseReference
-        .child('628710')
-        .update({'actions': '$action${DateTime.now().millisecondsSinceEpoch}'});
+    databaseReference.child('628710').update({'actions': '$action'});
   }
 
   void createData() {
